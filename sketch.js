@@ -1,4 +1,5 @@
 var terra;
+var song;
 var myButton;
 var myMap;
 var canvas;
@@ -26,6 +27,8 @@ function preload(){
 
   Pnord = loadImage("./assets/northpole.png");
   Psud = loadImage("./assets/southpole.png");
+
+  song = loadSound("./assets/imbruttito.mp3");
   terra = loadImage("./assets/terrapiatta.jpg");
 
 }
@@ -49,7 +52,13 @@ function clickButton() {
   // background("white");
   image(terra, 0, 0, windowWidth, windowHeight);
   console.log(clickButton)
-  image.overlay(canvas);
+  
+  if (!song.isPlaying()) {
+       song.play();
+   } else {
+       song.pause();
+   }
+
 }
 
 function draw() {
