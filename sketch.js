@@ -45,11 +45,12 @@ function setup() {
 }
 
 
-// function clickButton() {
-//   // background("white");
-//   image(terra, 0, 0, windowWidth, windowHeight);
-//   console.log(clickButton)
-// }
+function clickButton() {
+  // background("white");
+  image(terra, 0, 0, windowWidth, windowHeight);
+  console.log(clickButton)
+  image.overlay(canvas);
+}
 
 function draw() {
 	clear();
