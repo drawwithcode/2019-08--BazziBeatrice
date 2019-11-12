@@ -1,3 +1,5 @@
+var terra;
+var myButton;
 var myMap;
 var canvas;
 var myLoc;
@@ -24,6 +26,7 @@ function preload(){
 
   Pnord = loadImage("./assets/northpole.png");
   Psud = loadImage("./assets/southpole.png");
+  terra = loadImage("./assets/terrapiatta.jpg");
 
 }
 
@@ -37,7 +40,16 @@ function setup() {
 	// Create a tile map with the options declared
 	myMap = mappa.tileMap(options);
 	myMap.overlay(canvas);
+
+
 }
+
+
+// function clickButton() {
+//   // background("white");
+//   image(terra, 0, 0, windowWidth, windowHeight);
+//   console.log(clickButton)
+// }
 
 function draw() {
 	clear();
@@ -107,5 +119,11 @@ function draw() {
   strokeWeight(4);
   stroke(255,255,255);
   line()
+
+  //bottone
+    myButton = createButton("discover the details");
+    myButton.position(windowWidth/2 + 300, 40);
+    myButton.mousePressed(clickButton);
+    myButton.style('background-color', "red");
 
 }
